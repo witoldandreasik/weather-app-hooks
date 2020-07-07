@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
+require("dotenv").config();
 const api = {
-  key: "7fd90313ba0928133acb3597d89e8ac7",
+  key: process.env.REACT_APP_KEY,
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
 function App() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
-  const [error, setError] = useState(false);
 
   const searchWeather = (e) => {
     if (e.key === "Enter") {
